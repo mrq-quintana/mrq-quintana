@@ -22,13 +22,12 @@ const NavBar = () => {
                     <NavDropdown.Item href="#action/3.3">Producto 3</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action/3.4">Producto 4</NavDropdown.Item>
-                    </NavDropdown>
+                    </NavDropdown>             
                 </Nav>
-                </Navbar.Collapse>
-                <CartWidget />
-            </Container>    
-        </Navbar>
-       
+                <CartWidget/> 
+                </Navbar.Collapse>              
+            </Container> 
+        </Navbar>     
         </>
     )
 }
