@@ -8,9 +8,13 @@ function ItemCount({stock, inicial}){
   const [disponible, setDisponible] = useState(stock);
 
   const restar = () =>{
-    
+      console.log(disponible)
+    if(disponible >1){
     setCount(count - 1)
-    
+    } else {
+        setDisponible(disponible)
+    }
+
   }
 
   const sumar = () =>{
