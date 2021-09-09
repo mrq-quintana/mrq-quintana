@@ -1,5 +1,6 @@
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import ItemCount from './ItemCount'
 
 function ItemListContainer(props) {
 return (
@@ -11,8 +12,10 @@ return (
                 <Card.Text>
                     Descripcion del producto
                 </Card.Text>
-                <Button variant="primary">Comprar</Button>
+                <ItemCount stock={5} inicial={0} />
+                {/* <Button variant="primary">Comprar</Button> */}
             </Card.Body>
+            
         </Card>
         
     </>
