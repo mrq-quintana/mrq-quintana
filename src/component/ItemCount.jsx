@@ -1,16 +1,15 @@
 
 import { useState } from 'react';
+import Button from './Button';
 
 
 function ItemCount({stock, inicial}){
-
   const [count, setCount] = useState(inicial);
   const [disponible, setDisponible] = useState(stock);
 
   const restar = () =>{
-      console.log(disponible)
-    if(disponible >1){
-    setCount(count - 1)
+    if(disponible>1 && count>=1){
+        setCount(count - 1)
     } else {
         setDisponible(disponible)
     }
@@ -18,6 +17,7 @@ function ItemCount({stock, inicial}){
   }
 
   const sumar = () =>{
+      if (count<=disponible && disponible > 0)
     setCount(count + 1)
   }
 
@@ -34,10 +34,7 @@ function ItemCount({stock, inicial}){
   
     return (
             <div>
-                <button onClick={restar}>-</button>
-                <button onClick={agregar}>Finalizar</button>
-                <button onClick={sumar}> + </button>
-                
+                <Button miOnClick={[sumar,restar,agregar]} />
                 <div><span>Agregar a carrito: {count} </span></div>
                 <div><span>Stock: {disponible}</span></div>       
               </div>
