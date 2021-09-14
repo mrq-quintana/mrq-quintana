@@ -1,4 +1,5 @@
 import ItemCount from "./ItemCount";
+
 // import ItemList from "./ItemList"
 import Productos from "./Productos";
 
@@ -18,6 +19,16 @@ db.then((resp) => {console.log(resp);}).catch((error) => {
 
 function ItemListContainer(props) {
   
+  const agregar = (cant,stockDisponible)=>{        
+        if ( stockDisponible >= 1 ){
+           
+            console.log('Compraste ' + cant + ' unidades quedan ' + (stockDisponible - cant) + ' disponibles!')
+            
+        } else {
+            console.log('Ya no queda mas Stock Disponible')
+        }
+  }
+
   return (
     <>
       {Productos.map((producto) => (
@@ -33,7 +44,7 @@ function ItemListContainer(props) {
                 ${producto.productSalePrice}
               </p>
               {/* <ItemList/> */}
-              <ItemCount stock={5} inicial={0} />
+              <ItemCount stock={5} inicial={0} miOnClick={agregar}/>
             </div>
           </div>
         </div>

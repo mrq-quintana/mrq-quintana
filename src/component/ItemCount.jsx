@@ -1,40 +1,34 @@
 
 import { useState } from 'react';
-import Button from './Button';
 
-
-function ItemCount({stock, inicial}){
+function ItemCount({stock, inicial, miOnClick}){
   const [count, setCount] = useState(inicial);
   const [disponible, setDisponible] = useState(stock);
 
   const restar = () =>{
     if(disponible>1 && count>=1){
-        setCount(count - 1)
-    } else {
-        setDisponible(disponible)
-    }
-
+          setCount(count - 1)
+      } else {
+          setDisponible(disponible)
+      }
   }
 
   const sumar = () =>{
-      if (count<=disponible && disponible > 0)
-    setCount(count + 1)
+      if (count<disponible && disponible > 0)
+      setCount(count + 1)
   }
 
-  const agregar = ()=>{        
-        if ( disponible >= 1 ){
-            console.log('Compraste ' + count + ' unidades quedan ' + (disponible - count) + ' disponibles!')
-            setDisponible(disponible - count)
-            setCount(0)
-        } else {
-            console.log('Ya no queda mas Stock Disponible')
-        }
-    
+  const handlerAgregar=()=>{
+    miOnClick(count,disponible)
+    setCount(0)
+    setDisponible(disponible - count)
   }
   
     return (
-            <div>
-                <Button miOnClick={[sumar,restar,agregar]} />
+            <div>                
+                <button type="button" className="btn btn-secondary btn-sm" onClick={restar}> - </button>
+                <button type="button" className="btn btn-secondary btn-sm" onClick={handlerAgregar}> Agregar </button>
+                <button type="button" className="btn btn-secondary btn-sm" onClick={sumar}> + </button>
                 <div><span>Agregar a carrito: {count} </span></div>
                 <div><span>Stock: {disponible}</span></div>       
               </div>
