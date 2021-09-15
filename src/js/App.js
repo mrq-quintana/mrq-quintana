@@ -2,6 +2,7 @@ import '../styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from '../component/NavBar';
 import ItemListContainer from '../component/ItemListContainer'
+import ItemDetailContainer from "../component/ItemDetailContainer";
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <div className="App"> 
         <NavBar/>
         <ItemListContainer greeting='Bienvenido a la tienda'/>
+        <ItemDetailContainer />
         </div>
     
       

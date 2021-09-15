@@ -902,3 +902,26 @@ const Productos = [
       rechazo("Error 404");
     }
   });
+
+
+  const Product = 
+    {
+      productId: 1000,
+      productName: "delightful chocolate Ilise",
+      productImage: "https://picsum.photos/400?image=659",
+      productStock: 81,
+      productPrice: "23488.67",
+      productSalePrice: "23488.67",
+      rating: 4,
+    }
+
+    export const dbase = new Promise((respuesta, rechazo) => {
+      let resp = "200";
+      if (resp === "200") {
+        setTimeout(() => {
+          respuesta(Product);
+        }, 2500);
+      } else {
+        rechazo("Error 404");
+      }
+    });
