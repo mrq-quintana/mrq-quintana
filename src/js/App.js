@@ -1,7 +1,7 @@
-import './App.css';
+import '../styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './component/NavBar';
-import ItemListContainer from './component/ItemListContainer'
+import NavBar from '../component/NavBar';
+import ItemListContainer from '../component/ItemListContainer'
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <>
         <div className="App"> 
         <NavBar/>
-        <ItemListContainer greeting='Soy un producto'/>
+        <ItemListContainer greeting='Bienvenido a la tienda'/>
         </div>
     
       

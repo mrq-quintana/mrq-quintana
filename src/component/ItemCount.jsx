@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 function ItemCount({stock, inicial, miOnClick}){

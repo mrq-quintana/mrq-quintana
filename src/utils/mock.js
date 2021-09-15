@@ -1,49 +1,49 @@
 const Productos = [
-   {
-     productId: 1000,
-     productName: "delightful chocolate Ilise",
-     productImage: "https://picsum.photos/400?image=659",
-     productStock: 81,
-     productPrice: "23488.67",
-     productSalePrice: "23488.67",
-     rating: 4,
-   },
-   {
-     productId: 1001,
-     productName: "civilian salmon Delinda",
-     productImage: "https://picsum.photos/400?image=261",
-     productStock: 66,
-     productPrice: "42992.62",
-     productSalePrice: "20636.46",
-     rating: 2,
-   },
-   {
-     productId: 1002,
-     productName: "northern chocolate Dagmar",
-     productImage: "https://picsum.photos/400?image=921",
-     productStock: 58,
-     productPrice: "26956.67",
-     productSalePrice: "26956.67",
-     rating: 4,
-   },
-   {
-     productId: 1004,
-     productName: "arrogant tan Nelia",
-     productImage: "https://picsum.photos/400?image=924",
-     productStock: 85,
-     productPrice: "27379.36",
-     productSalePrice: "9308.98",
-     rating: 4,
-   },
-   {
-     productId: 1005,
-     productName: "following bronze Misti",
-     productImage: "https://picsum.photos/400?image=340",
-     productStock: 24,
-     productPrice: "34617.96",
-     productSalePrice: "34617.96",
-     rating: 3,
-   },
+    {
+      productId: 1000,
+      productName: "delightful chocolate Ilise",
+      productImage: "https://picsum.photos/400?image=659",
+      productStock: 81,
+      productPrice: "23488.67",
+      productSalePrice: "23488.67",
+      rating: 4,
+    },
+    {
+      productId: 1001,
+      productName: "civilian salmon Delinda",
+      productImage: "https://picsum.photos/400?image=261",
+      productStock: 66,
+      productPrice: "42992.62",
+      productSalePrice: "20636.46",
+      rating: 2,
+    },
+    {
+      productId: 1002,
+      productName: "northern chocolate Dagmar",
+      productImage: "https://picsum.photos/400?image=921",
+      productStock: 58,
+      productPrice: "26956.67",
+      productSalePrice: "26956.67",
+      rating: 4,
+    },
+    {
+      productId: 1004,
+      productName: "arrogant tan Nelia",
+      productImage: "https://picsum.photos/400?image=924",
+      productStock: 85,
+      productPrice: "27379.36",
+      productSalePrice: "9308.98",
+      rating: 4,
+    },
+    {
+      productId: 1005,
+      productName: "following bronze Misti",
+      productImage: "https://picsum.photos/400?image=340",
+      productStock: 24,
+      productPrice: "34617.96",
+      productSalePrice: "34617.96",
+      rating: 3,
+    },
   //  {
   //    productId: 1006,
   //    productName: "continued rose Nesta",
@@ -890,6 +890,15 @@ const Productos = [
   //    productSalePrice: "8908.76",
   //    rating: 3,
   //  },
- ];
-
- export default Productos
+]
+  
+  export const db = new Promise((respuesta, rechazo) => {
+    let resp = "200";
+    if (resp === "200") {
+      setTimeout(() => {
+        respuesta(Productos);
+      }, 2000);
+    } else {
+      rechazo("Error 404");
+    }
+  });
