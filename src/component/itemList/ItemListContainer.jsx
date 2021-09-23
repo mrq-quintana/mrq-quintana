@@ -1,10 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemList from "./ItemList";
-import { db } from "../utils/mock";
+import ItemList from "../itemList/ItemList";
+import { db } from "../../utils/mock";
 
-console.log(db);
 
 function ItemListContainer(props) {
   const [productos, setProducts] = useState([]);
@@ -29,8 +28,8 @@ function ItemListContainer(props) {
         })
         .finally(() => setLoading(false));
     }
-    console.log(idCategorias);
   }, [idCategorias]);
+  
 
   return (
     <div>
