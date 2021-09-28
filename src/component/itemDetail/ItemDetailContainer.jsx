@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
     if (idDetalle){
       db.then((respuesta) => {
         setDetailItem(
-          respuesta.find((elemento) => elemento.productId === parseInt(idDetalle))
+          respuesta.find((e) => e.productId === parseInt(idDetalle))
         );
       }).catch((error) => {
         console.log(error);

@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 
 
 function ItemCount({ stock, inicial, miOnClick }) {
-  const [count, setCount] = useState(inicial);
-  const [disponible, setDisponible] = useState(stock);
-  const [botonEnd, setBotonEnd] = useState(true)
+    const [count, setCount] = useState(inicial);
+    const [disponible, setDisponible] = useState(stock);
+    const [botonEnd, setBotonEnd] = useState(true)
+
   function restar(){
     if (disponible > 1 && count >= 1) {
       setCount(count - 1);
@@ -16,7 +17,8 @@ function ItemCount({ stock, inicial, miOnClick }) {
   };
 
   function sumar(){
-    if (count < disponible && disponible > 0) setCount(count + 1);
+    if (count < disponible && disponible > 0) 
+    setCount(count + 1);
   };
 
   function handlerAgregar(){
@@ -30,6 +32,7 @@ function ItemCount({ stock, inicial, miOnClick }) {
     <>
         { botonEnd ?
           <div>
+            <br></br>
             <button type="button" className="btn btn-secondary btn-sm" onClick={restar}>{" "}-{" "}</button>
             <button type="button" className="btn btn-secondary btn-sm" onClick={handlerAgregar}> {" "}Agregar{" "}</button>
             <button type="button" className="btn btn-secondary btn-sm" onClick={sumar}>{" "}+{" "} </button>
@@ -46,11 +49,15 @@ function ItemCount({ stock, inicial, miOnClick }) {
             
             <br></br>
             <Link to='/'>
-            <button type="button" className="btn btn-secondary btn-sm">Continuar comprando</button>
+              <button type="button" className="btn btn-secondary btn-sm">Continuar comprando</button>
             </Link>
             <Link to='/carrito'>
-            <button type="button" className="btn btn-secondary btn-sm">Finalizar compra</button>
+              <button type="button" className="btn btn-secondary btn-sm">Finalizar compra</button>
             </Link>
+            <div>
+              <span>Stock: {disponible} </span>
+              
+            </div>
           </div>
 
         }

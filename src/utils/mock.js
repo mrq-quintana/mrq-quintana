@@ -1,4 +1,4 @@
-const Productos = [
+export const Productos = [
     {
       productId: 1000,
       productName: "delightful chocolate Ilise",
