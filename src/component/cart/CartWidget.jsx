@@ -2,10 +2,14 @@ import React from 'react'
 import { TiShoppingCart } from 'react-icons/ti'
 
 
-const CartWidget = () =>{
+const CartWidget = ({count}) =>{
     return (
             <>
+                <div>
                 <TiShoppingCart/>
+                {count}
+
+                </div>
             </>
     )
 }

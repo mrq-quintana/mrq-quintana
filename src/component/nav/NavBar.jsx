@@ -4,9 +4,13 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import CartWidget from '../cart/CartWidget'
 import { Link } from 'react-router-dom'
+import { useCartContext } from "../../context/CartContext"
 
 
-const NavBar = () => {
+const NavBar = (props) => {
+    const {count} = props
+    const {sumaCarrito} = useCartContext()
+
     return (
         <>
             <Navbar bg="light" expand="lg">
@@ -25,8 +29,9 @@ const NavBar = () => {
                                     </Link>
                                                     
                                     <Link to='/carrito'>
-                                            <CartWidget/> 
+                                            <CartWidget count={count}/> 
                                     </Link>
+                                    {sumaCarrito()}
                                 </Nav>
                             </Navbar.Collapse>              
                 </Container> 

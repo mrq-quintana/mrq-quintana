@@ -8,7 +8,7 @@ import '../styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Productos } from "../utils/mock";
 import CartContextProvider from "../context/CartContext"
-
+import Final from '../component/finalizar/Final'
 
 export const ContextoApp = createContext('') 
 
@@ -31,6 +31,7 @@ function App() {
                         <Route path='/categorias/:idCategorias' component={ItemListContainer} /> 
                         <Route path='/detalle/:idDetalle' component={ItemDetailContainer} /> 
                         <Route exact path='/carrito' component={Cart}/>
+                        <Route exact path='/finalizar' component={Final}/>
                       </Switch>      
                 </div>
           </BrowserRouter>
