@@ -6,7 +6,9 @@ import { useCartContext } from "../../context/CartContext";
 const Cart = () => {
     
     const {cartList, borrar,precioTotal} = useCartContext()
-    console.log(cartList)
+
+    console.log(cartList) //Con este debo terminar el formulario de compra agregando datos del comprador
+
     if (cartList.length === 0) 
     
     return  <> 
@@ -19,7 +21,7 @@ const Cart = () => {
     return <> <div>
                     <center>{ cartList.map(carritoItem =>
                         <div key={carritoItem.item.productId}> 
-                            <h2>{carritoItem.item.productName}</h2>
+                            <h2>{carritoItem.item.productName} jajaja</h2>
                             <img alt={carritoItem.item.productName} src={carritoItem.item.productImage} />
                             <h2>${carritoItem.item.productPrice}</h2>
                             <h3>{carritoItem.cantidad}</h3>

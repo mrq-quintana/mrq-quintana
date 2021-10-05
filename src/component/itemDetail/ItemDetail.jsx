@@ -31,7 +31,7 @@ function ItemDetail( {detailItem} ){
       <h6>Nombre: {detailItem.productName}</h6>
       <h6>Precio: ${detailItem.productPrice}</h6>
       <img alt={detailItem.productName} src={detailItem.productImage} />
-      <h6>Descripcion: </h6>
+      <h6>Descripcion: {detailItem.description}</h6>
       <br></br>
       <ItemCount stock= {detailItem.productStock} inicial={0} miOnClick={agregar}/>
 
