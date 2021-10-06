@@ -2,16 +2,12 @@ import React from 'react'
 import { TiShoppingCart } from 'react-icons/ti'
 
 
-const CartWidget = ({count}) =>{
-    return (
-            <>
-                <div>
-                <TiShoppingCart/>
-                {count}
-
-                </div>
-            </>
-    )
+const CartWidget = () =>{
+        return  <>
+                    <div>
+                        <TiShoppingCart/>
+                    </div>
+                </>   
 }
 
 export default CartWidget

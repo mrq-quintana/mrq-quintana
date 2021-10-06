@@ -35,7 +35,7 @@ export default function CartContextProvider ({children}){
 
 
             const sumaCarrito = () => {
-                return cartList.reduce( (a, suma)=> a + suma.cantidad, 0) 
+                return cartList.reduce( (a, suma)=> a + suma.cantidad,0) 
             }
 
 

@@ -13,12 +13,26 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const db = getDb();
     
-            db.collection("items")
+            // db.collection("items")
+            //   .get()
+            //   .then((resp) => {
+            //     setDetailItem(
+            //       resp.docs.map((prod) => ({ productId: prod.id, ...prod.data() })).find((prod) => prod.productId === idDetalle)
+            //     );
+            //   })
+            //   .catch((error) => {
+            //     console.log(error);
+            //   })
+            //   .finally(() => setLoading(false));
+            //   },[idDetalle]);
+
+              db.collection("items")
+              .doc(idDetalle)
               .get()
               .then((resp) => {
                 setDetailItem(
-                  resp.docs.map((prod) => ({ productId: prod.id, ...prod.data() })).find((prod) => prod.productId === idDetalle)
-                );
+                  { productId: resp.id, ...resp.data() }
+                  );
               })
               .catch((error) => {
                 console.log(error);
