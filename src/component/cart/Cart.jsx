@@ -58,7 +58,7 @@ const Cart = () => {
                                    
                 )
 
-    // //Actualiza todos los items que estan en el listado de Cart del CartContext
+    
     const itemAct =
                 db.collection('items')
                 .where(
@@ -66,8 +66,6 @@ const Cart = () => {
                 )
 
     const batch = db.batch();
-
-    // // por cada item restar del stock la cantidad de el carrito
 
     itemAct.get()
     .then( collection=>{
