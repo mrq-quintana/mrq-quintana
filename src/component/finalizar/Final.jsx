@@ -1,4 +1,4 @@
-const Final = () =>{
+function Final(){
     return(
         <div>
             <h2>

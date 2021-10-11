@@ -26,13 +26,11 @@ export default function CartContextProvider ({children}){
     }
 
             const borrar = (item) => {
-                //Verificamos si esta en el carrito  
 
                 const borrarProducto = cartList.filter((e) => e.item.productId !== item.item.productId);
             
                 setCartList([...borrarProducto]);
             };  
-
 
             const sumaCarrito = () => {
                 return cartList.reduce( (a, suma)=> a + suma.cantidad,0) 
@@ -44,7 +42,7 @@ export default function CartContextProvider ({children}){
             }
 
         function borrarLista() {
-            cartList([])
+            setCartList([]);
         }
 
 

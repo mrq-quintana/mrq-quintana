@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../itemList/ItemList";
-// import { db } from "../../utils/mock";
 import getDb from "../../service/getFirebase";
 
 function ItemListContainer(props) {
