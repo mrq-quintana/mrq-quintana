@@ -9,7 +9,7 @@ function ItemCount({ stock, inicial, miOnClick }) {
     const [botonEnd, setBotonEnd] = useState(true)
 
   function restar(){
-    if (disponible > 1 && count >= 1) {
+    if (disponible > 1 && count >= 2) {
       setCount(count - 1);
     } else {
       setDisponible(disponible);
@@ -17,7 +17,7 @@ function ItemCount({ stock, inicial, miOnClick }) {
   };
 
   function sumar(){
-    if (count < disponible && disponible > 0) 
+    if (count < disponible && disponible > 1) 
     setCount(count + 1);
   };
 

@@ -6,7 +6,9 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 
 
+
 const Cart = () => {
+  const [idCompra, setIdCompra] = useState([])
   const [formCliente, setFormCliente] = useState({
     nombre: "",
     tel: "",
@@ -15,73 +17,66 @@ const Cart = () => {
 
   const { cartList, borrar, precioTotal, borrarLista } = useCartContext();
 
+
+
   function controlSubmit(e) {
     e.preventDefault();
 
     let compra = {};
-
     compra.fecha = firebase.firestore.Timestamp.fromDate(new Date());
-
     compra.comprador = formCliente;
-
     compra.valorCompra = precioTotal();
+    compra.detalle =
+                    cartList.map((compraItem) => {
+                      const id = compraItem.item.productId;
+                      const title = compraItem.item.productName;
+                      const qty = compraItem.cantidad;
+                      const unitPrice = compraItem.item.productPrice;
+                      const totalPrice = compraItem.item.productPrice * compraItem.cantidad;
 
-    compra.detalle = 
-        cartList.map((compraItem) => {
-                    const id = compraItem.item.productId;
-                    const title = compraItem.item.productName;
-                    const qty = compraItem.cantidad;
-                    const unitPrice = compraItem.item.productPrice;
-                    const totalPrice = compraItem.item.productPrice * compraItem.cantidad;
-
-      return { id, title, totalPrice, qty, unitPrice };
-    });
+                      return { id, title, totalPrice, qty, unitPrice };
+                    });
 
     const db = getDb();
-
-                db.collection("compra")
+              db.collection("compra")
                 .add(compra)
-                .then((resp) => alert ('Gracias por su compra, su numero de compra es: ' + resp.id))
+                // .then((resp) => alert('Gracias por su compra, su numero de compra es: ' + resp.id))
+                .then((resp) =>setIdCompra(resp.id)
+                )
                 .catch((err) => console.log(err))
                 .finally(() =>
-                    setFormCliente({
-                                    nombre: "",
-                                    tel: "",
-                                    email: "",
-                                    email2: "",
-                                    }),
+                  setFormCliente({
+                    nombre: "",
+                    tel: "",
+                    email: "",
+                    email2: "",
+                  }),
+                  borrarLista(),
 
-                                   borrarLista(),
-                                   
-                                   
-
-                                   
                 )
 
-    
+
     const itemAct =
-                db.collection('items')
-                .where(
-                    firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i=> i.item.productId)
-                )
+      db.collection('items')
+        .where(
+          firebase.firestore.FieldPath.documentId(), 'in', cartList.map(i => i.item.productId)
+        )
 
     const batch = db.batch();
 
     itemAct.get()
-    .then( collection=>{
+      .then(collection => {
         collection.docs.forEach(docSnapshot => {
-            batch.update(docSnapshot.ref, {
-                productStock: docSnapshot.data().productStock - cartList.find(item => item.item.productId === docSnapshot.id).cantidad
-            })
+          batch.update(docSnapshot.ref, {
+            productStock: docSnapshot.data().productStock - cartList.find(item => item.item.productId === docSnapshot.id).cantidad
+          })
         })
 
-        batch.commit().then(res =>{
-            console.log('resultado batch:', res)
+        batch.commit().then(resp => {
+          console.log('resultado batch:', resp)
         })
-    }) 
+      })
   }
-
-
   function controlChange(e) {
     setFormCliente({
       ...formCliente,
@@ -89,13 +84,15 @@ const Cart = () => {
     });
   }
 
+
   if (cartList.length === 0)
     return (
       <>
-        <h2>Nada por aqui</h2>
+        <h6>{(idCompra.length!== 0)? 'Su numero de compra es:' + idCompra : '¿Ya finalizo su compra?, Aguarde...' }</h6>
         <Link to={`/`}>
-          <button className="btn btn-danger">Vayamos a comprar</button>
+          <button className="btn btn-danger">Comprar</button>
         </Link>
+        
       </>
     );
 
@@ -117,6 +114,9 @@ const Cart = () => {
             </div>
           ))}
           <div>{precioTotal()}</div>
+
+          {/* Formulario */}
+
           <div>
             <form onSubmit={controlSubmit} onChange={controlChange}>
               <input
@@ -124,29 +124,41 @@ const Cart = () => {
                 placeholder="Nombre"
                 name="nombre"
                 value={formCliente.nombre}
+                onChange={controlChange}
               />
               <input
                 type="text"
                 placeholder="Telefono Personal"
                 name="tel"
                 value={formCliente.tel}
+                onChange={controlChange}
               />
               <input
                 type="text"
                 placeholder="Email"
                 name="email"
                 value={formCliente.email}
+                onChange={controlChange}
               />
               <input
                 type="text"
                 placeholder="Confirme Email "
                 name="email2"
                 value={formCliente.email2}
+
               />
+              {((formCliente.email !== formCliente.email2) && formCliente.nombre !== (" ") && formCliente.tel !== (" ")) ?
 
-                {( (formCliente.nombre !== ' ' && formCliente.tel !== ' ') && (formCliente.email !== formCliente.email2)) ? <div>Completar todos los campos</div> : <div><button>Finalizar</button></div>}
-              
+                <div>Completar todos los campos</div>
+                :
+                // <Link to={'/finalizar'}>
+                //   <button className="btn">Ultimo paso</button>
+                // </Link>
 
+                <button className="btn">Ultimo paso</button>
+
+
+              }
 
             </form>
           </div>

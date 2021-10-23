@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+/* font-family: 'Teko', sans-serif;
+font-family: 'Rampart One', cursive; */
+
+  .cord {
+    background: rgb(34, 34, 34);
+    border: 1px solid #dd2476;
+    color: rgba(250, 250, 250, 0.8);
+    margin: 2rem;
+    transition: .4s linear;
+    border-radius: 5px;
+    height: auto;
+    
+    
+}
+.container-app{
+    display: flex;
+    float: left;
+    border-radius: 50px;
+    
+}
+  .cord:hover {
+    transform: scale(1, 1.008);
+    /* transform: translateY(-3px); */
+    box-shadow: -10px -8px 10px 0px rgba(0,0,0,0.47);
+    }
+    h5{
+        font-family: 'Rampart One', cursive;
+        color: rgba(250, 250, 250, 0.8);
+    }
+  
+    h1{
+      font-family: 'Rampart One', cursive;
+      color: rgba(250, 250, 250, 0.8);
+  }
+
+
+  .cord__image{
+      height: auto;
+      width: 100%;
+      border-radius: 5px;
+  }
+  
+  
+  .btn {
+    border: 5px solid;
+    background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+    text-decoration: none;
+    font-family: 'Teko', sans-serif;
+
+   
+    
+  }
+  
+  .btn:hover, .btn:focus {
+    background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+    box-shadow: rgba(253, 94, 240, 0.932) 1px 0 10px;
+    text-decoration: underline;
+  }
+  p {
+    font-family: 'Teko', sans-serif;
+  }
+
+ .myNavBar{
+    background: rgb(34, 34, 34);
+    border: 1px solid #dd2476;
+    color: rgba(250, 250, 250, 0.8);
+ }
+
+ .myNavBar span{
+    text-decoration: none;
+    margin: 10px;
+    color: rgba(250, 250, 250, 0.8);
+    font-family: 'Rampart One', cursive;
+    font-size: 2rem;
+ }
+ .cart{
+     font-size: 30px;
+ }
+ .cartNumber{
+    font-family: 'Rampart One', cursive;
+    font-size: 10px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 12px;
+    background-color: #DD2476;
+    color: rgba(250, 250, 250, 0.8);
+    width: 15px;
+    height: 15px;
+    border-radius: 7px;
+ }
+ h6{
+   color: rgb(0, 0, 0);
+ }
