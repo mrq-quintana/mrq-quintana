@@ -3,93 +3,130 @@
 /* font-family: 'Teko', sans-serif;
 font-family: 'Rampart One', cursive; */
 
-  .cord {
-    background: rgb(34, 34, 34);
-    border: 1px solid #dd2476;
-    color: rgba(250, 250, 250, 0.8);
-    margin: 2rem;
-    transition: .4s linear;
-    border-radius: 5px;
-    height: auto;
-    
-    
+.container-app {
+  display: flex;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
 }
-.container-app{
-    display: flex;
-    float: left;
-    border-radius: 50px;
-    
+
+.cord {
+  background: rgb(34, 34, 34);
+  border: 2px solid #dd2476;
+  color: rgba(250, 250, 250, 0.8);
+  transition: .4s linear;
+  border-radius: 20px;
+  height: auto;
+  width: 100%;
 }
-  .cord:hover {
-    transform: scale(1, 1.008);
-    /* transform: translateY(-3px); */
-    box-shadow: -10px -8px 10px 0px rgba(0,0,0,0.47);
-    }
-    h5{
-        font-family: 'Rampart One', cursive;
-        color: rgba(250, 250, 250, 0.8);
-    }
+
+.cord:hover {
+  transform: scale(1, 1.008);
+  box-shadow: -10px 0px 10px 0px rgba(0, 0, 0, 0.47);
+}
+
+.container-app h5 {
+  color: rgba(250, 250, 250, 0.8);
+  font-family: 'Teko', sans-serif;
+  font-size: 3rem;
+}
+.cord h5 {
+  color: rgba(250, 250, 250, 0.8);
+  font-family: 'Teko', sans-serif;
+  font-size: 3rem;
+}
+h5 {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'Teko', sans-serif;
+  font-size: 3rem;
+}
+h4 {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'Teko', sans-serif;
+  font-size: 4.2rem;
+}
+
+.cord_image {
+  margin-left: 5px;
+  margin-right: 5px;
+  height: auto;
+  width: 99%;
+  border-radius: 20px;
+}
+
+.btn {
+  border:  #dd2476 3px solid;
+  background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+  text-decoration: none;
+  font-family: 'Teko', sans-serif;
+  font-size: 2rem;
+  margin: 10px;
+}
+
+.btn:hover, .btn:focus {
+  background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+  box-shadow: rgba(253, 94, 240, 0.932) 1px 0 10px;
+  text-decoration: none;
+}
+
+p {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.8rem;
+}
+
+.myNavBar {
+  background: rgb(34, 34, 34);
+  border: 2px solid #dd2476;
+  border-radius: 20px;
+}
+.myNavBarList{
+  background: rgb(34, 34, 34);
+  border: 2px solid #dd2476;
+  border-radius: 20px;
   
-    h1{
-      font-family: 'Rampart One', cursive;
-      color: rgba(250, 250, 250, 0.8);
-  }
+}
 
+.titulo {
+  text-decoration: none;
+  margin: 10px;
+  color: rgba(250, 250, 250, 0.8);
+  font-family: 'Teko', sans-serif;
+  font-size: 4rem;
+}
 
-  .cord__image{
-      height: auto;
-      width: 100%;
-      border-radius: 5px;
-  }
-  
-  
-  .btn {
-    border: 5px solid;
-    background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
-    text-decoration: none;
-    font-family: 'Teko', sans-serif;
+.subTitulo {
+  text-decoration: none;
+  margin: 10px;
+  color: rgba(250, 250, 250, 0.8);
+  font-family: 'Teko', sans-serif;
+  font-size: 2rem;
+  text-align: end;
+}
 
-   
-    
-  }
-  
-  .btn:hover, .btn:focus {
-    background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
-    box-shadow: rgba(253, 94, 240, 0.932) 1px 0 10px;
-    text-decoration: underline;
-  }
-  p {
-    font-family: 'Teko', sans-serif;
-  }
+.cart {
+  margin-bottom: auto;
+  margin-top: auto;
+  font-size: 30px;
+  font-family: 'Teko', sans-serif;
+}
+.carrito{
+  display: flex;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cartNumber {
+  font-family: 'Teko', sans-serif;
+  font-size: 14px;
+  background-color: #ff0000;
+  border: 2px solid #dd2476;
+  color: rgba(250, 250, 250, 0.8);
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
 
- .myNavBar{
-    background: rgb(34, 34, 34);
-    border: 1px solid #dd2476;
-    color: rgba(250, 250, 250, 0.8);
- }
-
- .myNavBar span{
-    text-decoration: none;
-    margin: 10px;
-    color: rgba(250, 250, 250, 0.8);
-    font-family: 'Rampart One', cursive;
-    font-size: 2rem;
- }
- .cart{
-     font-size: 30px;
- }
- .cartNumber{
-    font-family: 'Rampart One', cursive;
-    font-size: 10px;
-    text-align: center;
-    justify-content: center;
-    margin-top: 12px;
-    background-color: #DD2476;
-    color: rgba(250, 250, 250, 0.8);
-    width: 15px;
-    height: 15px;
-    border-radius: 7px;
- }
- h6{
-   color: rgb(0, 0, 0);
- }
+h6 {
+  color: rgb(0, 0, 0);
+}

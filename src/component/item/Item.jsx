@@ -4,19 +4,17 @@ import '../../styles/Item.css'
 
 
 function Item({ producto }) {
-
-
   return (
-    
-        <div className="col-sm-12 col-md-6 col-lg-4 container-app">
+        <div className="col-sm-12 col-md-6 col-lg-4 container-app ">
           <div key={producto.productId} className="cord">
+          <h5 >{producto.productName}</h5>
             <img
               src={producto.productImage}
-              className="cord__image"
+              className="cord_image"
               alt={producto.productName}
             />
             <div className="card-body">
-              <h5 className="card-title">{producto.productName}</h5>
+              
 
               <Link to={`/detalle/${producto.productId}`}>
                 <button className="btn">Detalle</button>
@@ -28,11 +26,8 @@ function Item({ producto }) {
                 <span>Stock: {producto.productStock}</span>
               </p>
             </div>
-          </div>
-         
-        </div>
-     
-    
+          </div> 
+        </div>   
   );
 }
 

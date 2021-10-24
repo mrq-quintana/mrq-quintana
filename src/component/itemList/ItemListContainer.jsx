@@ -42,10 +42,10 @@ function ItemListContainer(props) {
   }, [idCategorias]);
 
   return (
-    <div>
-      <h1 className="card-title">{props.greeting}</h1>
-      {loading ? <h2>Cargando pagina</h2> : <ItemList productos={productos} />}
-    </div>
+    <>
+      
+      {loading ? <h5>Cargando productos...</h5> : <div><h5 className="card-title">{props.greeting}</h5> <ItemList productos={productos} /></div>}
+    </>
   );
 }
 export default ItemListContainer;

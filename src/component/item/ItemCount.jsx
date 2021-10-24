@@ -36,13 +36,13 @@ function ItemCount({ stock, inicial, miOnClick }) {
             <button type="button" className="btn btn-secondary btn-sm" onClick={restar}>{" "}-{" "}</button>
             <button type="button" className="btn btn-secondary btn-sm" onClick={handlerAgregar}> {" "}Agregar{" "}</button>
             <button type="button" className="btn btn-secondary btn-sm" onClick={sumar}>{" "}+{" "} </button>
-            <div>
+            <p className="card-text">
               <span>Agregar a carrito: {count} </span>
-            </div>
-            <div>
+            </p>
+            <p className="card-text">
               <span>Stock: {disponible} </span>
               
-            </div>
+            </p>
           </div>
           :
           <div>
@@ -54,10 +54,10 @@ function ItemCount({ stock, inicial, miOnClick }) {
             <Link to='/carrito'>
               <button type="button" className="btn btn-secondary btn-sm">Finalizar compra</button>
             </Link>
-            <div>
+            <p className="card-text">
               <span>Stock: {disponible} </span>
               
-            </div>
+            </p>
           </div>
 
         }

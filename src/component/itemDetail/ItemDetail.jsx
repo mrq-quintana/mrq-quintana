@@ -27,11 +27,11 @@ function ItemDetail( {detailItem} ){
 
   return (
     <>
-    <div>
-      <h6>Nombre: {detailItem.productName}</h6>
-      <h6>Precio: ${detailItem.productPrice}</h6>
-      <img alt={detailItem.productName} src={detailItem.productImage} />
-      <h6>Descripcion: {detailItem.description}</h6>
+    <div className="cord">
+      <h5>{detailItem.productName}</h5>
+      <h5>${detailItem.productPrice}</h5>
+      <img className="cord_image" alt={detailItem.productName} src={detailItem.productImage} />
+      <h5>{detailItem.description}</h5>
       <br></br>
       <ItemCount stock= {detailItem.productStock} inicial={1} miOnClick={agregar}/>
 

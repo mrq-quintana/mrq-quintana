@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, createContext } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBar from '../component/nav/NavBar';
@@ -5,7 +6,6 @@ import ItemListContainer from '../component/itemList/ItemListContainer'
 import ItemDetailContainer from "../component/itemDetail/ItemDetailContainer";
 import Cart from '../component/cart/Cart'
 import '../styles/App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Productos } from "../utils/mock";
 import CartContextProvider from "../context/CartContext"
 import Final from '../component/finalizar/Final'
@@ -22,7 +22,7 @@ function App() {
     <CartContextProvider>
         <ContextoApp.Provider value={{state, seteoState}}>
           <BrowserRouter>
-                <div className="App"> 
+                <div className=" container-fluid App"> 
                   <NavBar/>
                       <Switch>
                         <Route exact path='/' >

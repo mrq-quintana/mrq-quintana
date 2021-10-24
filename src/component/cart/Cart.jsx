@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
+import { BsFillTrashFill } from "react-icons/bs";
 import getDb from "../../service/getFirebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
@@ -88,7 +89,7 @@ const Cart = () => {
   if (cartList.length === 0)
     return (
       <>
-        <h6>{(idCompra.length!== 0)? 'Su numero de compra es:' + idCompra : '¿Ya finalizo su compra?, Aguarde...' }</h6>
+        <h5>{(idCompra.length!== 0)? 'Su numero de compra es:' + idCompra : '¿Ya finalizo su compra?, Aguarde...' }</h5>
         <Link to={`/`}>
           <button className="btn btn-danger">Comprar</button>
         </Link>
@@ -98,19 +99,20 @@ const Cart = () => {
 
   return (
     <>
-      <div>
-        <center>
+      <div className="container-fluid container-app col-sm-12 col-md-6">
+        <div>
           {cartList.map((carritoItem) => (
-            <div key={carritoItem.item.productId}>
-              <h2>{carritoItem.item.productName}</h2>
+            <div key={carritoItem.item.productId} className="cord">
+              <h5>{carritoItem.item.productName}</h5>
               <img
                 alt={carritoItem.item.productName}
                 src={carritoItem.item.productImage}
+                className="cord_image"
               />
-              <h2>${carritoItem.item.productPrice}</h2>
-              <h3>{carritoItem.cantidad}</h3>
-              <h2>${carritoItem.cantidad * carritoItem.item.productPrice}</h2>
-              <button onClick={() => borrar(carritoItem)}>Eliminar</button>
+              <h5>${carritoItem.item.productPrice}</h5>
+              <h5>{carritoItem.cantidad}</h5>
+              <h5>${carritoItem.cantidad * carritoItem.item.productPrice}</h5>
+              <button className="btn"onClick={() => borrar(carritoItem)}><BsFillTrashFill/></button>
             </div>
           ))}
           <div>{precioTotal()}</div>
@@ -162,7 +164,7 @@ const Cart = () => {
 
             </form>
           </div>
-        </center>
+          </div>
       </div>
     </>
   );
