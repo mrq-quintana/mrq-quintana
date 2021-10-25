@@ -1,11 +1,10 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { TiShoppingCart } from 'react-icons/ti'
 import { Link } from 'react-router-dom'
 import { useCartContext } from "../../context/CartContext"
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import Logo_red from '../../img/Logo_red.png';
-
+import CartWidget from '../cart/CartWidget'
 
 
 const NavBar = () => {
@@ -44,9 +43,7 @@ const NavBar = () => {
                             <Nav.Link className="carrito">
                                 <div className="carrito">
                                     <Link to='/carrito'>
-                                        <div className="cart">
-                                            <TiShoppingCart className="cart" />
-                                        </div>
+                                        <CartWidget />
                                     </Link>
                                     <div className="cartNumber">
                                         {sumaCarrito()}

@@ -6,9 +6,10 @@ font-family: 'Rampart One', cursive; */
 .container-app {
   display: flex;
   float: left;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+ 
 }
 
 .cord {
@@ -18,7 +19,7 @@ font-family: 'Rampart One', cursive; */
   transition: .4s linear;
   border-radius: 20px;
   height: auto;
-  width: auto;
+  width: 98%;
 
 }
 
@@ -49,10 +50,10 @@ h4 {
 }
 
 .cord_image {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
   height: auto;
-  width: 99%;
+  width: 90%;
   border-radius: 20px;
 }
 .cord_image_detail{

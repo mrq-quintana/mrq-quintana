@@ -8,6 +8,7 @@ import "firebase/firestore";
 
 
 
+
 const Cart = () => {
   const [idCompra, setIdCompra] = useState([])
   const [formCliente, setFormCliente] = useState({
@@ -41,9 +42,7 @@ const Cart = () => {
     const db = getDb();
     db.collection("compra")
       .add(compra)
-      // .then((resp) => alert('Gracias por su compra, su numero de compra es: ' + resp.id))
-      .then((resp) => setIdCompra(resp.id)
-      )
+      .then((resp) => setIdCompra(resp.id))
       .catch((err) => console.log(err))
       .finally(() =>
         setFormCliente({
@@ -53,7 +52,6 @@ const Cart = () => {
           email2: "",
         }),
         borrarLista(),
-
       )
 
 
@@ -89,7 +87,7 @@ const Cart = () => {
   if (cartList.length === 0)
     return (
       <>
-        <h5>{(idCompra.length !== 0) ? 'Su numero de compra es:' + idCompra : '¿Ya finalizo su compra?, Aguarde...'}</h5>
+        <h5>{(idCompra.length !== 0) ? 'Su numero de compra es:  ' + idCompra : '¿Ya finalizo su compra?, Aguarde...'}</h5>
         <Link to={`/`}>
           <button className="btn btn-danger">Comprar</button>
         </Link>
@@ -99,9 +97,9 @@ const Cart = () => {
 
   return (
     <>
-    {/* Formulario */}
-    <div><h4 className="card-title">Vamos a finalizar su compra</h4></div>
-    <div>
+      {/* Formulario */}
+      <div><h4 className="card-title">Vamos a finalizar su compra</h4></div>
+      <div>
         <form onSubmit={controlSubmit} onChange={controlChange}>
           <input
             type="text"
@@ -109,6 +107,7 @@ const Cart = () => {
             name="nombre"
             value={formCliente.nombre}
             onChange={controlChange}
+            required="required"
           />
           <input
             type="text"
@@ -116,6 +115,7 @@ const Cart = () => {
             name="tel"
             value={formCliente.tel}
             onChange={controlChange}
+            required="required"
           />
           <input
             type="text"
@@ -123,29 +123,32 @@ const Cart = () => {
             name="email"
             value={formCliente.email}
             onChange={controlChange}
+            required="required"
           />
           <input
             type="text"
             placeholder="Confirme Email "
             name="email2"
             value={formCliente.email2}
+            required="required"
 
           />
-          {((formCliente.email !== formCliente.email2) && formCliente.nombre !== (" ") && formCliente.tel !== (" ")) ?
+          {((formCliente.email !== formCliente.email2)) ?
 
             <div>Completar todos los campos</div>
             :
             <button className="btn">Ultimo paso</button>
           }
         </form>
+        
       </div>
       <div>
         {cartList.map((carritoItem) => (
-          <div className="container bcontent" key={carritoItem.item.productId}>           
+          <div className="container bcontent" key={carritoItem.item.productId}>
             <hr />
             <div className="card cord" width="500">
               <div className="row no-gutters">
-                  <h5 className="card-title">{carritoItem.item.productName}</h5>
+                <h5 className="card-title">{carritoItem.item.productName}</h5>
                 <div className="col-sm-5">
                   <img className="card-img cord_image_cart" alt={carritoItem.item.productName} src={carritoItem.item.productImage} />
                 </div>
@@ -153,9 +156,9 @@ const Cart = () => {
                   <div className="card-body detalle_cart">
                     <div>
                       <p className="card-text">Precio unitario: ${carritoItem.item.productPrice}</p>
-                    
+
                       <p className="card-text">Cantidad: {carritoItem.cantidad}</p>
-                    
+
                       <p className="card-text">Precio cantidad: ${carritoItem.cantidad * carritoItem.item.productPrice}</p>
                     </div>
                     <div>

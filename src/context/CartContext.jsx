@@ -4,59 +4,52 @@ const cartContext = createContext([]);
 
 export const useCartContext = () => useContext(cartContext)
 
-export default function CartContextProvider ({children}){
+export default function CartContextProvider({ children }) {
+    const [cartList, setCartList] = useState([])
 
-    const [cartList, setCartList]= useState([])
-
-
-    function agregarCarrito(item){
-
+    function agregarCarrito(item) {
         let carritoCargado = [...cartList]
-      
 
-        if(carritoCargado.some(e => e.item.productId === item.item.productId)){
-            carritoCargado.find(e=>e.item.productId ===item.item.productId).cantidad += item.cantidad
+        if (carritoCargado.some(e => e.item.productId === item.item.productId)) {
+            carritoCargado.find(e => e.item.productId === item.item.productId).cantidad += item.cantidad
             setCartList([...cartList])
-            
-            
-        }else{
+        } else {
             setCartList([...cartList, item])
         }
-        
+
     }
 
-            const borrar = (item) => {
+    const borrar = (item) => {
 
-                const borrarProducto = cartList.filter((e) => e.item.productId !== item.item.productId);
-            
-                setCartList([...borrarProducto]);
-            };  
+        const borrarProducto = cartList.filter((e) => e.item.productId !== item.item.productId);
 
-            const sumaCarrito = () => {
-                return cartList.reduce( (a, suma)=> a + suma.cantidad,0) 
-            }
+        setCartList([...borrarProducto]);
+    };
 
-
-            const precioTotal =()=>{
-                return cartList.reduce((ac, val)=>(ac + (val.cantidad * val.item.productPrice)), 0) 
-            }
-
-        function borrarLista() {
-            setCartList([]);
-        }
+    const sumaCarrito = () => {
+        return cartList.reduce((a, suma) => a + suma.cantidad, 0)
+    }
 
 
-    return(
+    const precioTotal = () => {
+        return cartList.reduce((ac, val) => (ac + (val.cantidad * val.item.productPrice)), 0)
+    }
+
+    function borrarLista() {
+        setCartList([]);
+    }
+
+
+    return (
         <cartContext.Provider value={{
-        cartList,
-        agregarCarrito,
-        borrar,
-        sumaCarrito,
-        precioTotal,
-        borrarLista
+            cartList,
+            agregarCarrito,
+            borrar,
+            sumaCarrito,
+            precioTotal,
+            borrarLista
         }}>
-
-        {children}
+            {children}
         </cartContext.Provider>
     )
 }

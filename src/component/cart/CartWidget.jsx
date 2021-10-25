@@ -1,15 +1,14 @@
 import React from 'react'
-import { TiShoppingCart} from 'react-icons/ti'
-import { GiShoppingCart} from 'react-icons/gi'
+import { TiShoppingCart } from 'react-icons/ti'
 
 
-const CartWidget = () =>{
-        return  <>
-                    <div>
-                        <TiShoppingCart/>
-                        <GiShoppingCart/>
-                    </div>
-                </>   
+
+const CartWidget = () => {
+    return <>
+        <div className="cart">
+            <TiShoppingCart className="cart" />
+        </div>
+    </>
 }
 
 export default CartWidget
