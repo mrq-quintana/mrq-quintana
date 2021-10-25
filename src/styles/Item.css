@@ -18,7 +18,8 @@ font-family: 'Rampart One', cursive; */
   transition: .4s linear;
   border-radius: 20px;
   height: auto;
-  width: 100%;
+  width: auto;
+
 }
 
 .cord:hover {
@@ -54,14 +55,53 @@ h4 {
   width: 99%;
   border-radius: 20px;
 }
-
+.cord_image_detail{
+  margin-left: 5px;
+  margin-right: 5px;
+  height: auto;
+  width: 50%;
+  border-radius: 20px;
+  border:  #dd2476 3px solid;
+}
+.cord_image_cart{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  height: auto;
+  width: 90%;
+  border-radius: 20px;
+  border:  #dd247775 .5px solid;
+  box-shadow: -3px 3px 3px 3px rgba(212, 212, 212, 0.068);
+}
+.cord_description_detail{
+  width: 50%;
+  margin: auto;
+}
+.cord_description_detail h5{
+  font-family: 'Teko', sans-serif;
+  font-size: 1.8rem;
+}
+.btn_cart{
+  border:  #dd2476 3px solid;
+  background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+  text-decoration: none;
+  font-family: 'Teko', sans-serif;
+  font-size: 1.2rem;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+.btn_cart:hover, .btn_cart:focus {
+  background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+  box-shadow: rgba(253, 94, 240, 0.932) 1px 0 10px;
+  text-decoration: none;
+}
 .btn {
   border:  #dd2476 3px solid;
   background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
   text-decoration: none;
   font-family: 'Teko', sans-serif;
-  font-size: 2rem;
-  margin: 10px;
+  font-size: 1.2rem;
+  margin: 4px;
 }
 
 .btn:hover, .btn:focus {
@@ -75,6 +115,23 @@ p {
   font-size: 1.8rem;
 }
 
+.detalle{
+  flex-direction: column;
+  
+  margin: auto;
+  
+}
+.detalle_cart{
+  display: flex;
+  float: left;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.detalle_cart p{
+  margin-left: auto;
+  margin-right: auto;
+}
 .myNavBar {
   background: rgb(34, 34, 34);
   border: 2px solid #dd2476;
@@ -129,4 +186,17 @@ p {
 
 h6 {
   color: rgb(0, 0, 0);
+}
+form{
+  background: rgb(34, 34, 34);
+  border: 2px solid #dd2476;
+  border-radius: 20px;
+  
+}
+form input{
+  border: 2px solid #dd2476;
+  border-radius: 20px;
+  margin-top: 10px;
+  font-size: 30px;
+  font-family: 'Teko', sans-serif;
 }
