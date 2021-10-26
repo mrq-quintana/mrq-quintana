@@ -33,21 +33,17 @@ function ItemCount({ stock, inicial, miOnClick }) {
       {botonEnd ?
         <div>
           <br></br>
-          <p className="card-text">
-            <span>Agregar a carrito: {count} </span>
-          </p>
-          <button type="button" className="btn btn-secondary btn-sm" onClick={restar}>{" "}-{" "}</button>
-          <button type="button" className="btn btn-secondary btn-sm" onClick={handlerAgregar}> {" "}Agregar{" "}</button>
-          <button type="button" className="btn btn-secondary btn-sm" onClick={sumar}>{" "}+{" "} </button>
-          {/* <p className="card-text">
-            <span>Stock: {disponible} </span>
-
-          </p> */}
+          <div className="card-text">
+            <p className="card-text">
+              <button type="button" className="btn btn-secondary btn-sm" onClick={restar}>{" "}-{" "}</button>
+              <span>{count}</span>
+              <button type="button" className="btn btn-secondary btn-sm" onClick={sumar}>{" "}+{" "} </button>
+            </p>
+          </div>
+          <button type="button" className="btn btn-secondary btn-sm" onClick={handlerAgregar}> {" "}Agregar al Carrito{" "}</button>
         </div>
         :
         <div>
-
-          
           <br></br>
           <p> Productos agregados!</p>
           <Link to='/'>
@@ -59,10 +55,10 @@ function ItemCount({ stock, inicial, miOnClick }) {
         </div>
 
       }
-          <p className="card-text">
-            <span>Stock: {disponible} </span>
+      <p className="card-text">
+        <span>Stock: {disponible} </span>
 
-          </p>
+      </p>
     </>
   );
 }

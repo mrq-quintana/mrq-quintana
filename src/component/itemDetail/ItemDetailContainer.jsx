@@ -26,9 +26,6 @@ const ItemDetailContainer = () => {
       .finally(() => setLoading(false));
   }, [idDetalle]);
 
-
-
-
   return (
     <div>
       {loading ? <p></p> : <ItemDetail detailItem={detailItem} />}

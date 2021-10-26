@@ -7,7 +7,7 @@ Curso con una duracion total de 7 semanas con una carga horaria de 4hs semanales
 - Carga horaria total : **42hs** aprox. 
 
 - GitHub: https://github.com/mrq-quintana/quintana-proyecto-react
--  Demo:  
+-  Demo:  https://elated-galileo-7d4958.netlify.app/
 
 # Descripcion y utilidad
 La app permite recorrer todo el circuito de compra desde la eleccion de los productos has ta la finalizacion de la misma.
